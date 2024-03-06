@@ -8,15 +8,15 @@ from os.path import exists
 
 env.hosts = ['18.206.208.89', '100.25.145.25']
 
-def do_deploy(arch_path):
+def do_deploy(archive_path):
     """distributes archive remotely"""
-    if exists(arch_path) is False:
+    if exists(archive_path) is False:
         return False
     try:
-        fi = arch_path.split("/")[-1]
+        fi = archive_path.split("/")[-1]
         na = fi.split(".")[0]
         path = "/data/web_static/releases/"
-        put(arch_path, '/tmp/')
+        put(archive_path, '/tmp/')
         run('mkdir -p {}{}/'.format(path, na))
         run('tar -xzf /tmp/{} -C {}{}/'.format(fi, path, na))
         run('rm /tmp/{}'.format(fi))
