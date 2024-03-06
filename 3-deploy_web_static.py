@@ -46,4 +46,3 @@ def deploy():
     if archive_path is None:
         return False
     return do_deploy(archive_path)
-
