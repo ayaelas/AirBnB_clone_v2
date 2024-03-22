@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 Script that open Flask web application
