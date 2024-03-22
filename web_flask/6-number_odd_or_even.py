@@ -2,14 +2,15 @@
 """
 Script that open Flask web application
 """
-from flask import Flask, render_template
+
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 app.url_map.strict_slahes = False
 
 
 @app.route("/")
-def hello():
+def hello_hbnb():
     return "Hello HBNB!"
 
 @app.route("/hbnb")
